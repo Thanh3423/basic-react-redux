@@ -12,14 +12,17 @@ class MyComponent extends React.Component {
     }
 
     handleAddNewUser = (userObj) => {
-        let listUsersNew = this.state.listUsers;
-        listUsersNew.unshift(userObj);
-        this.setState({
-            listUsers: listUsersNew
-        })
+        //bad code add user
+        // let listUsersNew = this.state.listUsers;
+        // listUsersNew.unshift(userObj);
         // this.setState({
-        //     listUsers: [userObj, ...this.state.listUsers]
+        //     listUsers: listUsersNew
         // })
+
+
+        this.setState({
+            listUsers: [userObj, ...this.state.listUsers]
+        })
     }
 
     //DRY: don't repeat youseft
