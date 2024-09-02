@@ -18,9 +18,10 @@ class DisplayInfor extends React.Component {
         console.log(listUsers);
         //console.table(listUsers);
         //props=> vieets tatws cuar properties: truyen du lieu tu component cha sang con
+        //tamplate +logic js
         return (
             <div className='display-infor-container'>
-                <img src={logo} />
+                {/* <img src={logo} /> */}
                 <div>
                     <span onClick={() => { this.handleShowHide() }}>
                         {this.state.isShowListUser === true ? "Hide list user: " : "Show list user"}
@@ -32,8 +33,13 @@ class DisplayInfor extends React.Component {
 
                             return (
                                 <div key={user.id} className={+user.age > 18 ? "green" : "red"}>
-                                    <div >My name is {user.name}</div>
-                                    <div>My age's {user.age}</div>
+                                    <div>
+                                        <div >My name is {user.name}</div>
+                                        <div>My age's {user.age}</div>
+                                    </div>
+                                    <div>
+                                        <button onClick={() => this.props.handleDeleteUser(user.id)}>Delete</button>
+                                    </div>
                                     <hr />
                                 </div>
                             )

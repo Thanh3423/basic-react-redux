@@ -25,12 +25,21 @@ class MyComponent extends React.Component {
         })
     }
 
-    //DRY: don't repeat youseft
-    //jsx: viết code javascript trong html
-    render() {
+    handleDeleteUser = (userId) => {
+        let listUsersClone = this.state.listUsers;
+        listUsersClone = listUsersClone.filter(item => item.id !== userId);
+        this.setState({
+            listUsers: listUsersClone
+        })
+    }
 
+    //DRY: don't repeat youself
+    //jsx: viết code javascript trong html
+    //component  = template + logic Js
+    render() {
         return (
             <>
+                <br />
                 <div className='a'>
 
                     <AddUserInfor
@@ -40,6 +49,7 @@ class MyComponent extends React.Component {
                     <br /><br />
                     <DisplayInfor
                         listUsers={this.state.listUsers}
+                        handleDeleteUser={this.handleDeleteUser}
                     />
                 </div>
                 <div className='b'>
