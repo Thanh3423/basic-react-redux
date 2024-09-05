@@ -9,6 +9,14 @@ const HomePage = (props) => {
                 />
 
             </video>
+            <div className='homePage-content'>
+                <div className='title-1'>Make forms
+                    worth filling out</div>
+                <div className='title-2'>Get more data—like signups, feedback, and anything else—with forms designed to be refreshingly different.</div>
+                <div className='title-3'>
+                    <button>Get's started. It's free</button>
+                </div>
+            </div>
 
         </div>
     )
